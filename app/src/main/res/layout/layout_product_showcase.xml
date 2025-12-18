@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:paddingTop="8dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="8dp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:spacing="12dp">
+
+        <!-- Product 1: Jasmine Rice -->
+        <LinearLayout
+            android:id="@+id/showcaseItem1"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/angkorricelogo"
+                android:contentDescription="Jasmine Rice"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jasmine"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 25.00"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9A961"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:spacing="2dp">
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="10"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="25"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="50"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Product 2: White Rice -->
+        <LinearLayout
+            android:id="@+id/showcaseItem2"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/angkorricelogo"
+                android:contentDescription="White Rice"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="White"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 22.00"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9A961"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:spacing="2dp">
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="10"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="25"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="50"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Product 3: Brown Rice -->
+        <LinearLayout
+            android:id="@+id/showcaseItem3"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/angkorricelogo"
+                android:contentDescription="Brown Rice"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brown"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 28.00"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9A961"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:spacing="2dp">
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="10"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="25"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="50"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Product 4: Sticky Rice -->
+        <LinearLayout
+            android:id="@+id/showcaseItem4"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/angkorricelogo"
+                android:contentDescription="Sticky Rice"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sticky"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 20.00"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9A961"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:spacing="2dp">
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="10"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="25"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="50"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Product 5: Red Rice -->
+        <LinearLayout
+            android:id="@+id/showcaseItem5"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/angkorricelogo"
+                android:contentDescription="Red Rice"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Red"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 24.00"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9A961"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:spacing="2dp">
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="10"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="25"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="50"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Product 6: Fragrant Rice -->
+        <LinearLayout
+            android:id="@+id/showcaseItem6"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/angkorricelogo"
+                android:contentDescription="Fragrant Rice"
+                android:scaleType="centerInside" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fragrant"
+                android:textSize="12sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 26.00"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#C9A961"
+                android:gravity="center"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="2dp"
+                android:spacing="2dp">
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="10"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="25"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+                <Button
+                    android:layout_width="18dp"
+                    android:layout_height="14dp"
+                    android:text="50"
+                    android:textSize="6sp"
+                    android:background="@drawable/quantity_button_background"
+                    android:textColor="#000000"
+                    android:padding="0dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</HorizontalScrollView>

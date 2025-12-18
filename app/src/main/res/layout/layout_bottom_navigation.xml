@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:orientation="horizontal"
+    android:background="#C9A961"
+    android:gravity="center"
+    android:padding="8dp"
+    android:spacing="12dp">
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Home"
+        android:background="@drawable/nav_button_background"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginEnd="6dp" />
+
+    <Button
+        android:id="@+id/btnCart"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Cart"
+        android:background="@drawable/nav_button_background"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Profile"
+        android:background="@drawable/nav_button_background"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginStart="6dp" />
+
+</LinearLayout>
