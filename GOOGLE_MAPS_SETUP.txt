@@ -1,0 +1,28 @@
+GOOGLE MAPS API KEY SETUP INSTRUCTIONS
+========================================
+
+Your App's Debug Signature:
+- Package Name: com.example.angkorriceapp
+- SHA-1: 63:E5:44:FC:FB:AB:24:30:90:A9:D4:90:A7:48:D5:04:BE:99:C7:40
+
+TO GET A WORKING GOOGLE MAPS API KEY:
+
+1. Go to: https://console.cloud.google.com
+2. Create a new project or select existing one
+3. Enable "Maps SDK for Android" API
+4. Go to Credentials → Create API Key
+5. Restrict the key to:
+   - Android apps
+   - Add your app by package name: com.example.angkorriceapp
+   - Add your SHA-1: 63:E5:44:FC:FB:AB:24:30:90:A9:D4:90:A7:48:D5:04:BE:99:C7:40
+
+6. Copy the generated API key
+7. Update AndroidManifest.xml with the new key:
+   
+   <meta-data
+       android:name="com.google.android.geo.API_KEY"
+       android:value="YOUR_NEW_API_KEY_HERE" />
+
+8. Rebuild and reinstall the app
+
+For now, the app will work with basic functionality (map may show without tiles initially).

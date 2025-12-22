@@ -1,11 +1,15 @@
 package com.example.angkorriceapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -15,10 +19,14 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private Button btnBackToCart;
     private Button btnPlaceOrder;
+    private Button btnPickFromMap;
     private TextView tvSubtotal;
     private TextView tvShipping;
     private TextView tvTotal;
     private TextView tvOrderItems;
+    private EditText etDeliveryAddress;
+
+    private ActivityResultLauncher<Intent> mapPickerLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,18 @@ public class CheckoutActivity extends AppCompatActivity {
             return insets;
         });
 
+        // Setup map picker launcher
+        mapPickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        String address = result.getData().getStringExtra("address");
+                        if (address != null) {
+                            etDeliveryAddress.setText(address);
+                        }
+                    }
+                });
+
         initializeUI();
         setupListeners();
         updateOrderSummary();
@@ -43,23 +63,36 @@ public class CheckoutActivity extends AppCompatActivity {
     private void initializeUI() {
         btnBackToCart = findViewById(R.id.btnBackToCart);
         btnPlaceOrder = findViewById(R.id.btnPlaceOrder);
+        btnPickFromMap = findViewById(R.id.btnPickFromMap);
         tvSubtotal = findViewById(R.id.tvSubtotal);
         tvShipping = findViewById(R.id.tvShipping);
         tvTotal = findViewById(R.id.tvTotal);
         tvOrderItems = findViewById(R.id.tvOrderItems);
+        etDeliveryAddress = findViewById(R.id.etDeliveryAddress);
     }
 
     private void setupListeners() {
         // Back button
         btnBackToCart.setOnClickListener(v -> finish());
 
+        // Pick from Map button
+        btnPickFromMap.setOnClickListener(v -> {
+            Intent intent = new Intent(CheckoutActivity.this, MapPickerActivity.class);
+            mapPickerLauncher.launch(intent);
+        });
+
         // Place Order button
         btnPlaceOrder.setOnClickListener(v -> {
+            String address = etDeliveryAddress.getText().toString().trim();
+            if (address.isEmpty()) {
+                Toast.makeText(this, "Please enter a delivery address", Toast.LENGTH_SHORT).show();
+                return;
+            }
             double total = CartManager.getInstance().getTotalPrice();
             if (CartManager.getInstance().getCartItems().isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Order placed successfully! Total: $" + String.format("%.2f", total), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Order placed successfully!\nDelivery to: " + address + "\nTotal: $" + String.format("%.2f", total), Toast.LENGTH_LONG).show();
                 // Clear cart after successful order
                 CartManager.getInstance().getCartItems().clear();
                 // Navigate back to cart
