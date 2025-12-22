@@ -99,13 +99,14 @@
 
             <Button
                 android:id="@+id/btnSearchLocation"
-                android:layout_width="48dp"
+                android:layout_width="56dp"
                 android:layout_height="45dp"
-                android:text="🔍"
-                android:textSize="18sp"
+                android:text="Search"
+                android:textSize="10sp"
                 android:textColor="#FFFFFF"
                 android:background="@drawable/quantity_button_background"
-                android:gravity="center" />
+                android:gravity="center"
+                android:padding="4dp" />
 
         </LinearLayout>
 
