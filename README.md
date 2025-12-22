@@ -29,6 +29,13 @@ Angkor Rice Shop is an Android app that showcases 6 different types of premium r
   - Real-time price calculations
 - **Persistent Data**: CartManager singleton pattern for app-wide access
 
+### Checkout & Delivery
+- **Checkout Screen**: Review order summary and totals
+- **Customer Information**: Enter name, phone, and delivery address
+- **Map Picker Integration**: Select delivery location from Google Maps
+- **Order Summary**: Display all items, subtotal, shipping, and total
+- **Shipping Calculation**: Automatic shipping cost calculation
+
 ### Product Details
 - **Detailed View**: Click any product to see full details
 - **Size Selection**: Choose preferred package size
@@ -53,6 +60,8 @@ Angkor Rice Shop is an Android app that showcases 6 different types of premium r
 - **MainActivity**: Main product listing and showcase
 - **CartActivity**: Shopping cart management
 - **ProductDetailActivity**: Detailed product view
+- **CheckoutActivity**: Order checkout and delivery information
+- **MapPickerActivity**: Location selection for delivery address
 
 ### Classes
 - **CartManager**: Singleton pattern for global cart management
@@ -116,6 +125,11 @@ cd Angkor-Rice-Shop
 5. **Add to Cart**: Tap "Add to Cart" button
 6. **View Cart**: Navigate to cart screen to review items
 7. **Manage Cart**: Adjust quantities or remove items as needed
+8. **Proceed to Checkout**: Tap "Checkout" to proceed with order
+9. **Enter Delivery Info**: Provide name, phone, and delivery address
+10. **Select Delivery Location**: Use map picker to pinpoint location
+11. **Review Order**: Confirm order details and totals
+12. **Place Order**: Complete the order
 
 ## 🎨 Color Scheme
 
@@ -136,6 +150,8 @@ AngkorRiceApp/
 │           │   ├── MainActivity.java
 │           │   ├── CartActivity.java
 │           │   ├── ProductDetailActivity.java
+│           │   ├── CheckoutActivity.java
+│           │   ├── MapPickerActivity.java
 │           │   ├── CartManager.java
 │           │   └── CartItem.java
 │           └── res/
@@ -143,6 +159,8 @@ AngkorRiceApp/
 │               │   ├── activity_main.xml
 │               │   ├── activity_cart.xml
 │               │   ├── activity_product_detail.xml
+│               │   ├── activity_checkout.xml
+│               │   ├── activity_map_picker.xml
 │               │   ├── layout_products_list.xml
 │               │   └── layout_product_showcase.xml
 │               ├── drawable/
@@ -184,6 +202,6 @@ For issues, feature requests, or questions, please open an issue on the GitHub r
 
 ---
 
-**Last Updated**: December 18, 2025
+**Last Updated**: December 22, 2025
 
 Made with ❤️ for premium Cambodian rice lovers
