@@ -1,5 +1,6 @@
 package com.example.angkorriceapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -56,8 +57,8 @@ public class CartActivity extends AppCompatActivity {
             if (items.isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-                double total = CartManager.getInstance().getTotalPrice();
-                Toast.makeText(this, "Checkout: $" + String.format("%.2f", total), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
+                startActivity(intent);
             }
         });
 
