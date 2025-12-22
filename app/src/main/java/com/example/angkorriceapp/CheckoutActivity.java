@@ -25,6 +25,9 @@ public class CheckoutActivity extends AppCompatActivity {
     private TextView tvTotal;
     private TextView tvOrderItems;
     private EditText etDeliveryAddress;
+    private EditText etCustomerName;
+    private EditText etCustomerEmail;
+    private EditText etCustomerPhone;
 
     private ActivityResultLauncher<Intent> mapPickerLauncher;
 
@@ -69,6 +72,9 @@ public class CheckoutActivity extends AppCompatActivity {
         tvTotal = findViewById(R.id.tvTotal);
         tvOrderItems = findViewById(R.id.tvOrderItems);
         etDeliveryAddress = findViewById(R.id.etDeliveryAddress);
+        etCustomerName = findViewById(R.id.etCustomerName);
+        etCustomerEmail = findViewById(R.id.etCustomerEmail);
+        etCustomerPhone = findViewById(R.id.etCustomerPhone);
     }
 
     private void setupListeners() {
@@ -83,18 +89,42 @@ public class CheckoutActivity extends AppCompatActivity {
 
         // Place Order button
         btnPlaceOrder.setOnClickListener(v -> {
+            String name = etCustomerName.getText().toString().trim();
+            String email = etCustomerEmail.getText().toString().trim();
+            String phone = etCustomerPhone.getText().toString().trim();
             String address = etDeliveryAddress.getText().toString().trim();
+            
+            if (name.isEmpty()) {
+                Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (phone.isEmpty()) {
+                Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if (address.isEmpty()) {
                 Toast.makeText(this, "Please enter a delivery address", Toast.LENGTH_SHORT).show();
                 return;
             }
+            
             double total = CartManager.getInstance().getTotalPrice();
             if (CartManager.getInstance().getCartItems().isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Order placed successfully!\nDelivery to: " + address + "\nTotal: $" + String.format("%.2f", total), Toast.LENGTH_LONG).show();
+                String orderMessage = String.format("Order placed successfully!\nName: %s\nEmail: %s\nPhone: %s\nDelivery to: %s\nTotal: $%.2f", 
+                    name, email, phone, address, total);
+                Toast.makeText(this, orderMessage, Toast.LENGTH_LONG).show();
                 // Clear cart after successful order
                 CartManager.getInstance().getCartItems().clear();
+                // Clear all input fields
+                etCustomerName.setText("");
+                etCustomerEmail.setText("");
+                etCustomerPhone.setText("");
+                etDeliveryAddress.setText("");
                 // Navigate back to cart
                 finish();
             }
