@@ -55,12 +55,33 @@
         android:background="#DDDDDD" />
 
     <!-- Google Map Fragment -->
-    <fragment
-        android:id="@+id/mapView"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1">
+
+        <fragment
+            android:id="@+id/mapView"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- My Location Button -->
+        <Button
+            android:id="@+id/btnMyLocation"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:text="📍"
+            android:textSize="24sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/quantity_button_background"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:elevation="4dp" />
+
+    </FrameLayout>
 
     <!-- Bottom Info Panel -->
     <LinearLayout

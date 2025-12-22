@@ -35,9 +35,11 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
 
     private GoogleMap mMap;
     private LatLng selectedLocation;
+    private LatLng userLocation;
     private Button btnBackToCheckout;
     private Button btnConfirmLocation;
     private Button btnSearchLocation;
+    private Button btnMyLocation;
     private EditText etSearchAddress;
     private LocationManager locationManager;
     private Geocoder geocoder;
@@ -70,6 +72,7 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         btnBackToCheckout = findViewById(R.id.btnBackToCheckout);
         btnConfirmLocation = findViewById(R.id.btnConfirmLocation);
         btnSearchLocation = findViewById(R.id.btnSearchLocation);
+        btnMyLocation = findViewById(R.id.btnMyLocation);
         etSearchAddress = findViewById(R.id.etSearchAddress);
         
         geocoder = new Geocoder(this);
@@ -78,6 +81,9 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         
         // Search location button
         btnSearchLocation.setOnClickListener(v -> searchLocation());
+        
+        // My Location button - centers map on user's current location
+        btnMyLocation.setOnClickListener(v -> centerMapOnUserLocation());
     }
 
     private void requestLocationPermissions() {
@@ -113,6 +119,12 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
                         1000, // Update every 1 second
                         0,    // Update every 0 meters
                         this);
+                
+                // Also try to get the last known location immediately
+                Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                if (lastKnownLocation != null) {
+                    onLocationChanged(lastKnownLocation);
+                }
             }
         }
     }
@@ -120,16 +132,12 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
     @Override
     public void onLocationChanged(Location location) {
         if (location != null) {
-            selectedLocation = new LatLng(location.getLatitude(), location.getLongitude());
+            userLocation = new LatLng(location.getLatitude(), location.getLongitude());
+            selectedLocation = userLocation;
             if (mMap != null) {
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(selectedLocation, ZOOM_LEVEL));
                 mMap.clear();
                 addMarker(selectedLocation);
-            }
-            // Stop updating once we have the location
-            if (locationManager != null && ActivityCompat.checkSelfPermission(this, 
-                    Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-                locationManager.removeUpdates(this);
             }
         }
     }
@@ -221,10 +229,8 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
             // Confirm location button
             btnConfirmLocation.setOnClickListener(v -> {
                 if (selectedLocation != null) {
-                    String address = String.format("%s, Cambodia\nLat: %.4f, Lng: %.4f",
-                            getAddressFromLocation(selectedLocation),
-                            selectedLocation.latitude,
-                            selectedLocation.longitude);
+                    // Get full address using reverse geocoding
+                    String address = getDetailedAddress(selectedLocation);
                     
                     Intent intent = new Intent();
                     intent.putExtra("address", address);
@@ -251,6 +257,52 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         }
     }
 
+    private String getDetailedAddress(LatLng location) {
+        try {
+            List<Address> addresses = geocoder.getFromLocation(location.latitude, location.longitude, 1);
+            
+            if (addresses != null && !addresses.isEmpty()) {
+                Address address = addresses.get(0);
+                StringBuilder addressText = new StringBuilder();
+                
+                // Build address from components
+                if (address.getThoroughfare() != null) {
+                    addressText.append(address.getThoroughfare()).append(" ");
+                }
+                if (address.getSubLocality() != null) {
+                    addressText.append(address.getSubLocality()).append(", ");
+                }
+                if (address.getLocality() != null) {
+                    addressText.append(address.getLocality()).append(", ");
+                }
+                if (address.getAdminArea() != null) {
+                    addressText.append(address.getAdminArea()).append(", ");
+                }
+                if (address.getCountryName() != null) {
+                    addressText.append(address.getCountryName());
+                }
+                
+                if (address.getPostalCode() != null && !address.getPostalCode().isEmpty()) {
+                    addressText.append(" ").append(address.getPostalCode());
+                }
+                
+                String result = addressText.toString().trim();
+                // If we got an empty result, return fallback
+                if (result.isEmpty()) {
+                    return String.format("Location: Lat %.4f, Lng %.4f, Cambodia", 
+                            location.latitude, location.longitude);
+                }
+                return result;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        // Fallback to simple address
+        return String.format("Location: Lat %.4f, Lng %.4f, Cambodia", 
+                location.latitude, location.longitude);
+    }
+
     private String getAddressFromLocation(LatLng location) {
         // Simplified address based on location in Cambodia
         double lat = location.latitude;
@@ -270,6 +322,18 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
             return "Western Cambodia";
         }
         return "Cambodia";
+    }
+
+    private void centerMapOnUserLocation() {
+        if (userLocation != null && mMap != null) {
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_LEVEL));
+            selectedLocation = userLocation;
+            mMap.clear();
+            addMarker(userLocation);
+            Toast.makeText(this, "Centered on your location", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Waiting for location...", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

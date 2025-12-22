@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background_color"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Header -->
     <LinearLayout
@@ -55,7 +56,8 @@
         android:background="#DDDDDD" />
 
     <!-- Scrollable Content -->
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -64,7 +66,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="12dp">
+            android:padding="12dp"
+            android:paddingBottom="320dp">
 
             <!-- Order Summary Card -->
             <LinearLayout
@@ -85,24 +88,33 @@
                     android:textColor="#000000"
                     android:layout_marginBottom="12dp" />
 
+                <!-- Products List -->
+                <LinearLayout
+                    android:id="@+id/llProductsList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
 
                     <TextView
                         android:id="@+id/tvOrderItems"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Items (2)"
+                        android:text="Items (0)"
                         android:textSize="14sp"
                         android:textColor="#000000" />
 
                     <TextView
+                        android:id="@+id/tvItemsTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$ 50.00"
+                        android:text="$ 0.00"
                         android:textSize="14sp"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -248,21 +260,6 @@
                     android:layout_marginBottom="8dp" />
 
                 <EditText
-                    android:id="@+id/etCustomerEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:hint="Email Address"
-                    android:textSize="13sp"
-                    android:textColor="#333333"
-                    android:textColorHint="#AAAAAA"
-                    android:paddingStart="12dp"
-                    android:paddingEnd="12dp"
-                    android:background="#FFFFFF"
-                    android:inputType="textEmailAddress"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="8dp" />
-
-                <EditText
                     android:id="@+id/etCustomerPhone"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
@@ -308,7 +305,7 @@
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <!-- Divider -->
     <View

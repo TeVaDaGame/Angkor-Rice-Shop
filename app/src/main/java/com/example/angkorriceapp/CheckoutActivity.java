@@ -1,9 +1,11 @@
 package com.example.angkorriceapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.widget.NestedScrollView;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -24,10 +27,12 @@ public class CheckoutActivity extends AppCompatActivity {
     private TextView tvShipping;
     private TextView tvTotal;
     private TextView tvOrderItems;
+    private TextView tvItemsTotal;
     private EditText etDeliveryAddress;
     private EditText etCustomerName;
-    private EditText etCustomerEmail;
     private EditText etCustomerPhone;
+    private NestedScrollView scrollView;
+    private LinearLayout llProductsList;
 
     private ActivityResultLauncher<Intent> mapPickerLauncher;
 
@@ -71,10 +76,16 @@ public class CheckoutActivity extends AppCompatActivity {
         tvShipping = findViewById(R.id.tvShipping);
         tvTotal = findViewById(R.id.tvTotal);
         tvOrderItems = findViewById(R.id.tvOrderItems);
+        tvItemsTotal = findViewById(R.id.tvItemsTotal);
         etDeliveryAddress = findViewById(R.id.etDeliveryAddress);
         etCustomerName = findViewById(R.id.etCustomerName);
-        etCustomerEmail = findViewById(R.id.etCustomerEmail);
         etCustomerPhone = findViewById(R.id.etCustomerPhone);
+        scrollView = findViewById(R.id.scrollView);
+        llProductsList = findViewById(R.id.llProductsList);
+    }
+    
+    private void setScrollOnFocusListener(EditText editText) {
+        // Removed auto-scroll - users can manually scroll to see fields
     }
 
     private void setupListeners() {
@@ -90,16 +101,11 @@ public class CheckoutActivity extends AppCompatActivity {
         // Place Order button
         btnPlaceOrder.setOnClickListener(v -> {
             String name = etCustomerName.getText().toString().trim();
-            String email = etCustomerEmail.getText().toString().trim();
             String phone = etCustomerPhone.getText().toString().trim();
             String address = etDeliveryAddress.getText().toString().trim();
             
             if (name.isEmpty()) {
                 Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
-                return;
-            }
-            if (email.isEmpty()) {
-                Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
                 return;
             }
             if (phone.isEmpty()) {
@@ -115,14 +121,13 @@ public class CheckoutActivity extends AppCompatActivity {
             if (CartManager.getInstance().getCartItems().isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-                String orderMessage = String.format("Order placed successfully!\nName: %s\nEmail: %s\nPhone: %s\nDelivery to: %s\nTotal: $%.2f", 
-                    name, email, phone, address, total);
+                String orderMessage = String.format("Order placed successfully!\nName: %s\nPhone: %s\nDelivery to: %s\nTotal: $%.2f", 
+                    name, phone, address, total);
                 Toast.makeText(this, orderMessage, Toast.LENGTH_LONG).show();
                 // Clear cart after successful order
                 CartManager.getInstance().getCartItems().clear();
                 // Clear all input fields
                 etCustomerName.setText("");
-                etCustomerEmail.setText("");
                 etCustomerPhone.setText("");
                 etDeliveryAddress.setText("");
                 // Navigate back to cart
@@ -132,12 +137,55 @@ public class CheckoutActivity extends AppCompatActivity {
     }
 
     private void updateOrderSummary() {
-        double subtotal = CartManager.getInstance().getTotalPrice();
+        // Clear previous items
+        llProductsList.removeAllViews();
+        
+        // Add each cart item to the display
+        double subtotal = 0;
+        for (CartItem item : CartManager.getInstance().getCartItems()) {
+            LinearLayout itemLayout = new LinearLayout(this);
+            itemLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            ));
+            itemLayout.setOrientation(LinearLayout.HORIZONTAL);
+            itemLayout.setPadding(0, 8, 0, 8);
+            
+            // Product name and size
+            TextView tvProductName = new TextView(this);
+            tvProductName.setLayoutParams(new LinearLayout.LayoutParams(
+                    0,
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    1f
+            ));
+            tvProductName.setText(item.getName() + " (" + item.getSize() + ") x" + item.getQuantity());
+            tvProductName.setTextSize(13);
+            tvProductName.setTextColor(getResources().getColor(android.R.color.black, getTheme()));
+            
+            // Product price
+            TextView tvProductPrice = new TextView(this);
+            tvProductPrice.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            ));
+            tvProductPrice.setText("$ " + String.format("%.2f", item.getTotal()));
+            tvProductPrice.setTextSize(13);
+            tvProductPrice.setTextColor(getResources().getColor(android.R.color.black, getTheme()));
+            tvProductPrice.setTypeface(null, Typeface.BOLD);
+            
+            itemLayout.addView(tvProductName);
+            itemLayout.addView(tvProductPrice);
+            
+            llProductsList.addView(itemLayout);
+            subtotal += item.getTotal();
+        }
+        
         double shipping = 5.00; // Fixed shipping cost
         double total = subtotal + shipping;
         int itemCount = CartManager.getInstance().getTotalItems();
 
         tvOrderItems.setText("Items (" + itemCount + ")");
+        tvItemsTotal.setText("$ " + String.format("%.2f", subtotal));
         tvSubtotal.setText("$ " + String.format("%.2f", subtotal));
         tvShipping.setText("$ " + String.format("%.2f", shipping));
         tvTotal.setText("$ " + String.format("%.2f", total));
