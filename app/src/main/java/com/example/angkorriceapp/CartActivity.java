@@ -57,13 +57,8 @@ public class CartActivity extends AppCompatActivity {
             if (items.isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-<<<<<<< HEAD
                 Intent intent = new Intent(CartActivity.this, CheckoutActivity.class);
                 startActivity(intent);
-=======
-                double total = CartManager.getInstance().getTotalPrice();
-                Toast.makeText(this, "Checkout: $" + String.format("%.2f", total), Toast.LENGTH_SHORT).show();
->>>>>>> origin/sreynoy
             }
         });
 

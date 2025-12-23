@@ -23,7 +23,7 @@
             android:value="AIzaSyCme2IqpfKFeQDhczohoqd5LYcwy-MLTMc" />
 
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".WelcomeScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

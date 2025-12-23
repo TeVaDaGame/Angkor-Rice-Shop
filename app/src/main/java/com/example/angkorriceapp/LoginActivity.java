@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
+
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -32,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
         txtRegister.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));
         });
+        
+        // Debug: Show all registered users when login screen loads
+        logAllUsers();
     }
 
     private void loginUser() {
@@ -54,6 +60,27 @@ public class LoginActivity extends AppCompatActivity {
 
         startActivity(new Intent(this, MainActivity.class));
         finish();
+    }
+
+    private void logAllUsers() {
+        SharedPreferences prefs = getSharedPreferences("users", MODE_PRIVATE);
+        Map<String, ?> allUsers = prefs.getAll();
+        
+        Log.d("LoginActivity", "========== ALL REGISTERED USERS ==========");
+        StringBuilder userList = new StringBuilder("Registered Users:\n");
+        if (allUsers.isEmpty()) {
+            Log.d("LoginActivity", "No users registered yet");
+            userList.append("None yet");
+        } else {
+            for (String email : allUsers.keySet()) {
+                Log.d("LoginActivity", "Email: " + email);
+                userList.append("• ").append(email).append("\n");
+            }
+        }
+        Log.d("LoginActivity", "==========================================");
+        
+        // Show in Toast for easy viewing
+        Toast.makeText(this, userList.toString(), Toast.LENGTH_LONG).show();
     }
 }
 

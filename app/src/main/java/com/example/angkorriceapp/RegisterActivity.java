@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -56,8 +58,32 @@ public class RegisterActivity extends AppCompatActivity {
         editor.apply();
 
         Toast.makeText(this, "Register successful!", Toast.LENGTH_SHORT).show();
+        
+        // Debug: Log all registered users
+        logAllUsers();
 
         startActivity(new Intent(this, LoginActivity.class));
         finish();
+    }
+
+    private void logAllUsers() {
+        SharedPreferences prefs = getSharedPreferences("users", MODE_PRIVATE);
+        Map<String, ?> allUsers = prefs.getAll();
+        
+        Log.d("RegisterActivity", "========== ALL REGISTERED USERS ==========");
+        StringBuilder userList = new StringBuilder("All Registered Users:\n");
+        if (allUsers.isEmpty()) {
+            Log.d("RegisterActivity", "No users registered yet");
+            userList.append("None yet");
+        } else {
+            for (String email : allUsers.keySet()) {
+                Log.d("RegisterActivity", "Email: " + email);
+                userList.append("• ").append(email).append("\n");
+            }
+        }
+        Log.d("RegisterActivity", "==========================================");
+        
+        // Show in Toast for easy viewing
+        Toast.makeText(this, userList.toString(), Toast.LENGTH_LONG).show();
     }
 }
