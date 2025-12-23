@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+    <!-- Header Include -->
+    <include layout="@layout/layout_header" />
+
+    <!-- Product Showcase Include -->
+    <include layout="@layout/layout_product_showcase" />
+
+    <!-- Products Title -->
+
+    <TextView
+        style="@style/OurProductsTitle"
+        android:text="Our Products" />
+
+    <include layout="@layout/layout_products_list" />
+
+    <!-- Bottom Navigation Include -->
+    <include layout="@layout/layout_bottom_navigation" />
+
+</LinearLayout>

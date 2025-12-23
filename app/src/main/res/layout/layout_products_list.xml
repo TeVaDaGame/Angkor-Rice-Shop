@@ -1,0 +1,1227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:spacing="16dp">
+
+        <!-- Product Card 1 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5E6D3"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <!-- Product Info Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:contentDescription="Jasmine Rice"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/angkorricelogo" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Jasmine Rice"
+                            android:textColor="#000000"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From: Battambang Province"
+                            android:textSize="12sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Quality"
+                            android:textSize="11sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Size Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amounts:"
+                        android:textSize="11sp"
+                        
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn10kg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="10kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn25kg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="25kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn50kg1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="50kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp" />
+
+                </LinearLayout>
+
+                <!-- Price and Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 25.00"
+                            android:textColor="#C9A961"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/btnMinus1"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="-"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/quantity1"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:text="1"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:background="@drawable/quantity_display_background"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp" />
+
+                            <Button
+                                android:id="@+id/btnPlus1"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="+"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/addToCart1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add to Cart"
+                        android:textSize="13sp"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:padding="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card 2 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="#F5E6D3">
+
+                <!-- Product Info Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/angkorricelogo"
+                        android:contentDescription="White Rice"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="White Rice"
+                            android:textColor="#000000" android:textSize="16sp"
+                            android:textStyle="bold"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From: Siem Reap Province"
+                            android:textSize="12sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Premium Quality"
+                            android:textSize="11sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Size Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amounts:"
+                        android:textSize="11sp"
+                        
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn10kg2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="10kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn25kg2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="25kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn50kg2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="50kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp" />
+
+                </LinearLayout>
+
+                <!-- Price and Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 22.00"
+                            android:textColor="#C9A961"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dp">
+
+                            <Button
+                                android:id="@+id/btnMinus2"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="-"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/quantity2"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:text="1"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:background="@drawable/quantity_display_background"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp" />
+
+                            <Button
+                                android:id="@+id/btnPlus2"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="+"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/addToCart2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add to Cart"
+                        android:textSize="13sp"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:padding="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card 3 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="#F5E6D3">
+
+                <!-- Product Info Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/angkorricelogo"
+                        android:contentDescription="Brown Rice"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Brown Rice"
+                            android:textColor="#000000" android:textSize="16sp"
+                            android:textStyle="bold"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From: Takeo Province"
+                            android:textSize="12sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Organic Quality"
+                            android:textSize="11sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Size Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amounts:"
+                        android:textSize="11sp"
+                        
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn10kg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="10kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn25kg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="25kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn50kg3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="50kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp" />
+
+                </LinearLayout>
+
+                <!-- Price and Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 28.00"
+                            android:textColor="#C9A961"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dp">
+
+                            <Button
+                                android:id="@+id/btnMinus3"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="-"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/quantity3"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:text="1"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:background="@drawable/quantity_display_background"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp" />
+
+                            <Button
+                                android:id="@+id/btnPlus3"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="+"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/addToCart3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add to Cart"
+                        android:textSize="13sp"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:padding="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card 4: Sticky Rice -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="#F5E6D3">
+
+                <!-- Product Info Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/angkorricelogo"
+                        android:contentDescription="Sticky Rice"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sticky Rice"
+                            android:textColor="#000000" android:textSize="16sp"
+                            android:textStyle="bold"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From: Mondolkiri Province"
+                            android:textSize="12sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Authentic Quality"
+                            android:textSize="11sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Size Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amounts:"
+                        android:textSize="11sp"
+                        
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn10kg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="10kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn25kg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="25kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn50kg4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="50kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp" />
+
+                </LinearLayout>
+
+                <!-- Price and Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 20.00" android:textColor="#C9A961" android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dp">
+
+                            <Button
+                                android:id="@+id/btnMinus4"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="-"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/quantity4"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:text="1"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:background="@drawable/quantity_display_background"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp" />
+
+                            <Button
+                                android:id="@+id/btnPlus4"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="+"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/addToCart4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add to Cart"
+                        android:textSize="13sp"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:padding="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card 5: Red Rice -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="#F5E6D3">
+
+                <!-- Product Info Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/angkorricelogo"
+                        android:contentDescription="Red Rice"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Red Rice"
+                            android:textColor="#000000" android:textSize="16sp"
+                            android:textStyle="bold"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From: Pursat Province"
+                            android:textSize="12sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Nutritious Quality"
+                            android:textSize="11sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Size Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amounts:"
+                        android:textSize="11sp"
+                        
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn10kg5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="10kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn25kg5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="25kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn50kg5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="50kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp" />
+
+                </LinearLayout>
+
+                <!-- Price and Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 24.00" android:textColor="#C9A961" android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dp">
+
+                            <Button
+                                android:id="@+id/btnMinus5"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="-"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/quantity5"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:text="1"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:background="@drawable/quantity_display_background"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp" />
+
+                            <Button
+                                android:id="@+id/btnPlus5"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="+"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/addToCart5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add to Cart"
+                        android:textSize="13sp"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:padding="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Product Card 6: Fragrant Rice -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="#F5E6D3">
+
+                <!-- Product Info Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:src="@drawable/angkorricelogo"
+                        android:contentDescription="Fragrant Rice"
+                        android:scaleType="centerInside" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="12dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fragrant Rice"
+                            android:textColor="#000000" android:textSize="16sp"
+                            android:textStyle="bold"
+                             />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="From: Kampong Cham"
+                            android:textSize="12sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="2dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Aromatic Quality"
+                            android:textSize="11sp"
+                            android:textColor="#555555"
+                            android:layout_marginTop="1dp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Size Selection Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amounts:"
+                        android:textSize="11sp"
+                        
+                        android:layout_marginEnd="6dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn10kg6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="10kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn25kg6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="25kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp"
+                        android:layout_marginEnd="3dp" />
+
+                    <Button
+                        android:id="@+id/sizeBtn50kg6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="50kg"
+                        android:textSize="12sp"
+                        
+                        
+                        android:paddingStart="6dp"
+                        android:paddingEnd="6dp" />
+
+                </LinearLayout>
+
+                <!-- Price and Quantity Row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/price6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$ 26.00" android:textColor="#C9A961" android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="3dp">
+
+                            <Button
+                                android:id="@+id/btnMinus6"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="-"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                            <TextView
+                                android:id="@+id/quantity6"
+                                android:layout_width="28dp"
+                                android:layout_height="32dp"
+                                android:text="1"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:textColor="#000000"
+                                android:background="@drawable/quantity_display_background"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginEnd="3dp" />
+
+                            <Button
+                                android:id="@+id/btnPlus6"
+                                android:layout_width="24dp"
+                                android:layout_height="32dp"
+                                android:text="+"
+                                android:textSize="14sp"
+                                
+                                
+                                android:padding="0dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <Button
+                        android:id="@+id/addToCart6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:text="Add to Cart"
+                        android:textSize="13sp"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:padding="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
+
+
+
+
