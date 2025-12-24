@@ -1,29 +1,28 @@
 package com.example.angkorriceapp;
 
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.TextView;
-
-import java.util.Map;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText emailInput, passInput;
     Button btnLogin;
     TextView txtRegister;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mAuth = FirebaseAuth.getInstance();
 
         emailInput = findViewById(R.id.input_email);
         passInput = findViewById(R.id.input_password);
@@ -35,52 +34,30 @@ public class LoginActivity extends AppCompatActivity {
         txtRegister.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));
         });
-        
-        // Debug: Show all registered users when login screen loads
-        logAllUsers();
     }
 
     private void loginUser() {
-        String email = emailInput.getText().toString();
-        String pass = passInput.getText().toString();
+        String email = emailInput.getText().toString().trim();
+        String pass = passInput.getText().toString().trim();
 
-        SharedPreferences prefs = getSharedPreferences("users", MODE_PRIVATE);
-
-        if (!prefs.contains(email)) {
-            Toast.makeText(this, "User not found!", Toast.LENGTH_SHORT).show();
+        if (email.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Please fill all fields!", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String savedPass = prefs.getString(email, "");
-
-        if (!savedPass.equals(pass)) {
-            Toast.makeText(this, "Incorrect password!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        startActivity(new Intent(this, MainActivity.class));
-        finish();
-    }
-
-    private void logAllUsers() {
-        SharedPreferences prefs = getSharedPreferences("users", MODE_PRIVATE);
-        Map<String, ?> allUsers = prefs.getAll();
-        
-        Log.d("LoginActivity", "========== ALL REGISTERED USERS ==========");
-        StringBuilder userList = new StringBuilder("Registered Users:\n");
-        if (allUsers.isEmpty()) {
-            Log.d("LoginActivity", "No users registered yet");
-            userList.append("None yet");
-        } else {
-            for (String email : allUsers.keySet()) {
-                Log.d("LoginActivity", "Email: " + email);
-                userList.append("• ").append(email).append("\n");
-            }
-        }
-        Log.d("LoginActivity", "==========================================");
-        
-        // Show in Toast for easy viewing
-        Toast.makeText(this, userList.toString(), Toast.LENGTH_LONG).show();
+        // Sign in with Firebase
+        mAuth.signInWithEmailAndPassword(email, pass)
+            .addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    finish();
+                } else {
+                    String error = task.getException() != null ? task.getException().getMessage() : "Login failed";
+                    Toast.makeText(LoginActivity.this, "Login failed: " + error, Toast.LENGTH_SHORT).show();
+                    Log.e("LoginActivity", "Login failed", task.getException());
+                }
+            });
     }
 }
 

@@ -66,15 +66,15 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_button"
-        android:textColor="@color/header_color"
-        style="?attr/buttonBarButtonStyle"/>
+        android:background="@drawable/quantity_button_background"
+        android:textColor="@color/header_color"/>
 
     <!-- Register Link -->
     <TextView
         android:id="@+id/txt_register"
         android:text="Don't have an account? Register"
         android:textColor="@color/white"
+        android:textSize="16sp"
         android:gravity="center"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"

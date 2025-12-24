@@ -39,7 +39,7 @@
         android:layout_height="55dp"
         android:text="Get Started"
         android:textStyle="bold"
-        android:backgroundTint="@color/white"
+        android:background="@drawable/quantity_button_background"
         android:textColor="@color/header_color"
         android:textSize="16sp" />
 

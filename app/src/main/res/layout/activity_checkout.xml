@@ -27,10 +27,9 @@
             android:layout_height="56dp"
             android:text="Back"
             android:textSize="14sp"
-            android:textColor="#000000"
             android:background="@drawable/quantity_button_background"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
+            
+            android:textColor="@color/header_color"
             android:gravity="center" />
 
         <TextView
@@ -218,8 +217,8 @@
                     android:layout_height="48dp"
                     android:text="📍 Pick from Map"
                     android:textSize="13sp"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/quantity_button_background"
+                    
+                    android:textColor="@color/header_color"
                     android:layout_marginTop="8dp"
                     android:gravity="center" />
 
@@ -355,9 +354,9 @@
             android:layout_height="56dp"
             android:text="Place Order"
             android:textSize="16sp"
-            android:textColor="#000000"
             android:textStyle="bold"
-            android:background="@drawable/quantity_button_background" />
+            
+            android:textColor="@color/header_color" />
 
     </LinearLayout>
 

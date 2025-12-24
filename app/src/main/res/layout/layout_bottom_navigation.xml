@@ -14,8 +14,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Home"
-        android:background="@drawable/nav_button_background"
-        android:textColor="#000000"
+        
+        android:textColor="@color/header_color"
         android:textStyle="bold"
         android:layout_marginEnd="6dp" />
 
@@ -25,8 +25,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Cart"
-        android:background="@drawable/nav_button_background"
-        android:textColor="#000000"
+        
+        android:textColor="@color/header_color"
         android:textStyle="bold"
         android:layout_marginStart="6dp"
         android:layout_marginEnd="6dp" />
@@ -37,8 +37,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Profile"
-        android:background="@drawable/nav_button_background"
-        android:textColor="#000000"
+        
+        android:textColor="@color/header_color"
         android:textStyle="bold"
         android:layout_marginStart="6dp" />
 

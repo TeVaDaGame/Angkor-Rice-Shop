@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="24dp"
+    android:paddingTop="48dp"
+    android:gravity="center"
+    android:orientation="vertical"
     android:background="@color/background_color">
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="24dp"
-        android:paddingTop="48dp">
 
         <TextView
             android:text="Create Account"
@@ -21,7 +18,7 @@
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="Join our community"
+            android:text="Create your account"
             android:textSize="14sp"
             android:textColor="@color/white"
             android:layout_marginBottom="32dp"
@@ -29,22 +26,23 @@
             android:layout_height="wrap_content" />
 
         <!-- Full Name -->
-        <EditText
-            android:id="@+id/input_name"
-            android:hint="Full Name"
-            android:inputType="textPersonName"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@drawable/rounded_input_field"
-            android:padding="12dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="#AAAAAA"
-            android:layout_marginBottom="12dp"
-            android:elevation="4dp" />
 
         <!-- Email -->
+        <EditText
+            android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/rounded_input_field"
+            android:elevation="4dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="#AAAAAA" />
+
         <EditText
             android:id="@+id/input_email"
             android:hint="Email"
@@ -83,22 +81,21 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/rounded_button"
-            android:textColor="@color/header_color"
-            style="?attr/buttonBarButtonStyle" />
+            android:layout_height="55dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/quantity_button_background"
+            android:textColor="@color/header_color" />
 
         <!-- Login Link -->
         <TextView
             android:id="@+id/txt_login"
-            android:text="Already have an account? Login"
-            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="Already have an account? Login"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
     </LinearLayout>
-
-</ScrollView>

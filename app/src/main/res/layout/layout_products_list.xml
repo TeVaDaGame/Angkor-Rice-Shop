@@ -98,8 +98,9 @@
                         android:layout_height="40dp"
                         android:text="10kg"
                         android:textSize="12sp"
-                        
-                        
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -110,8 +111,10 @@
                         android:layout_height="40dp"
                         android:text="25kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -122,8 +125,10 @@
                         android:layout_height="40dp"
                         android:text="50kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -162,8 +167,10 @@
                                 android:layout_height="32dp"
                                 android:text="-"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                             <TextView
@@ -184,8 +191,10 @@
                                 android:layout_height="32dp"
                                 android:text="+"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -203,8 +212,9 @@
                         android:layout_height="40dp"
                         android:text="Add to Cart"
                         android:textSize="13sp"
+                        android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="#000000"
+                        android:textColor="@color/header_color"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -300,8 +310,10 @@
                         android:layout_height="40dp"
                         android:text="10kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -312,8 +324,10 @@
                         android:layout_height="40dp"
                         android:text="25kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -324,8 +338,10 @@
                         android:layout_height="40dp"
                         android:text="50kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -364,8 +380,10 @@
                                 android:layout_height="32dp"
                                 android:text="-"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                             <TextView
@@ -386,8 +404,10 @@
                                 android:layout_height="32dp"
                                 android:text="+"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -405,8 +425,10 @@
                         android:layout_height="40dp"
                         android:text="Add to Cart"
                         android:textSize="13sp"
+                        android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="#000000"
+                        
+                        android:textColor="@color/header_color"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -502,8 +524,10 @@
                         android:layout_height="40dp"
                         android:text="10kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -514,8 +538,10 @@
                         android:layout_height="40dp"
                         android:text="25kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -526,8 +552,10 @@
                         android:layout_height="40dp"
                         android:text="50kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -566,8 +594,10 @@
                                 android:layout_height="32dp"
                                 android:text="-"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                             <TextView
@@ -588,8 +618,10 @@
                                 android:layout_height="32dp"
                                 android:text="+"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -607,8 +639,10 @@
                         android:layout_height="40dp"
                         android:text="Add to Cart"
                         android:textSize="13sp"
+                        android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="#000000"
+                        
+                        android:textColor="@color/header_color"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -704,8 +738,10 @@
                         android:layout_height="40dp"
                         android:text="10kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -716,8 +752,10 @@
                         android:layout_height="40dp"
                         android:text="25kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -728,8 +766,10 @@
                         android:layout_height="40dp"
                         android:text="50kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -766,8 +806,10 @@
                                 android:layout_height="32dp"
                                 android:text="-"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                             <TextView
@@ -788,8 +830,10 @@
                                 android:layout_height="32dp"
                                 android:text="+"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -807,8 +851,10 @@
                         android:layout_height="40dp"
                         android:text="Add to Cart"
                         android:textSize="13sp"
+                        android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="#000000"
+                        
+                        android:textColor="@color/header_color"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -904,8 +950,10 @@
                         android:layout_height="40dp"
                         android:text="10kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -916,8 +964,10 @@
                         android:layout_height="40dp"
                         android:text="25kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -928,8 +978,10 @@
                         android:layout_height="40dp"
                         android:text="50kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -966,8 +1018,10 @@
                                 android:layout_height="32dp"
                                 android:text="-"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                             <TextView
@@ -988,8 +1042,10 @@
                                 android:layout_height="32dp"
                                 android:text="+"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -1007,8 +1063,10 @@
                         android:layout_height="40dp"
                         android:text="Add to Cart"
                         android:textSize="13sp"
+                        android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="#000000"
+                        
+                        android:textColor="@color/header_color"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -1104,8 +1162,10 @@
                         android:layout_height="40dp"
                         android:text="10kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -1116,8 +1176,10 @@
                         android:layout_height="40dp"
                         android:text="25kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
@@ -1128,8 +1190,10 @@
                         android:layout_height="40dp"
                         android:text="50kg"
                         android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/quantity_button_background"
                         
-                        
+                        android:textColor="@color/header_color"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -1166,8 +1230,10 @@
                                 android:layout_height="32dp"
                                 android:text="-"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                             <TextView
@@ -1188,8 +1254,10 @@
                                 android:layout_height="32dp"
                                 android:text="+"
                                 android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:background="@drawable/quantity_button_background"
                                 
-                                
+                                android:textColor="@color/header_color"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -1207,8 +1275,10 @@
                         android:layout_height="40dp"
                         android:text="Add to Cart"
                         android:textSize="13sp"
+                        android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="#000000"
+                        
+                        android:textColor="@color/header_color"
                         android:gravity="center"
                         android:padding="4dp" />
 
