@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "492866731464",
-    "project_id": "angkorriceapp",
-    "storage_bucket": "angkorriceapp.firebasestorage.app"
+    "project_number": "911206253930",
+    "project_id": "angkorriceapp-4d783",
+    "storage_bucket": "angkorriceapp-4d783.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:492866731464:android:e958a106855bf5c98514fd",
+        "mobilesdk_app_id": "1:911206253930:android:81221fbd2487cbeca41113",
         "android_client_info": {
           "package_name": "com.example.angkorriceapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBRgU4bVzfNSSIvHrzXDnWOjv0QADacGHE"
+          "current_key": "AIzaSyAqNpk1IhvLX_NZAwXU4SWxkcYidDNvsss"
         }
       ],
       "services": {

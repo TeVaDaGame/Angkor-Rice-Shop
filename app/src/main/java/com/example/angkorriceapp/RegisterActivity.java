@@ -9,7 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -62,8 +65,13 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth.createUserWithEmailAndPassword(email, pass)
             .addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
+                    FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                    if (firebaseUser == null) {
+                         Toast.makeText(RegisterActivity.this, "Registration failed: user is null.", Toast.LENGTH_SHORT).show();
+                         return;
+                    }
                     // Save user data to Firestore
-                    String userId = mAuth.getCurrentUser().getUid();
+                    String userId = firebaseUser.getUid();
                     Map<String, Object> user = new HashMap<>();
                     user.put("name", name);
                     user.put("email", email);
@@ -72,17 +80,37 @@ public class RegisterActivity extends AppCompatActivity {
                     db.collection("users").document(userId).set(user)
                         .addOnSuccessListener(aVoid -> {
                             Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                             finish();
                         })
                         .addOnFailureListener(e -> {
-                            Toast.makeText(RegisterActivity.this, "Error saving user data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            Log.e("RegisterActivity", "Error saving user", e);
+                            Log.e("RegisterActivity", "Error saving user data to Firestore.", e);
+
+                            // If saving to Firestore fails, delete the user from Auth to allow re-registration
+                            firebaseUser.delete().addOnCompleteListener(deleteTask -> {
+                                if (deleteTask.isSuccessful()) {
+                                    Log.d("RegisterActivity", "Successfully deleted user from Auth after Firestore failure.");
+                                } else {
+                                    Log.w("RegisterActivity", "Failed to delete user from Auth after Firestore failure.", deleteTask.getException());
+                                }
+                            });
+
+                            String errorMessage = "Registration failed. Please try again.";
+                            if (e instanceof FirebaseFirestoreException && ((FirebaseFirestoreException) e).getCode() == FirebaseFirestoreException.Code.PERMISSION_DENIED) {
+                                errorMessage = "Registration failed: Database access denied. Please contact support.";
+                            }
+                            Toast.makeText(RegisterActivity.this, errorMessage, Toast.LENGTH_LONG).show();
                         });
                 } else {
-                    String error = task.getException() != null ? task.getException().getMessage() : "Registration failed";
-                    Toast.makeText(RegisterActivity.this, "Registration failed: " + error, Toast.LENGTH_SHORT).show();
-                    Log.e("RegisterActivity", "Registration failed", task.getException());
+                    // Handle user creation failure
+                    String errorMessage = "Registration failed. Please try again.";
+                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
+                        errorMessage = "This email address is already registered.";
+                    } else if (task.getException() != null) {
+                        errorMessage = task.getException().getMessage();
+                    }
+                    Toast.makeText(RegisterActivity.this, errorMessage, Toast.LENGTH_LONG).show();
+                    Log.e("RegisterActivity", "User creation failed.", task.getException());
                 }
             });
     }
