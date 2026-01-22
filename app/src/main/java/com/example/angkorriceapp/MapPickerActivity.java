@@ -54,7 +54,7 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         
-        getWindow().setStatusBarColor(getResources().getColor(R.color.header_color, getTheme()));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.gold, getTheme()));
         
         setContentView(R.layout.activity_map_picker);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

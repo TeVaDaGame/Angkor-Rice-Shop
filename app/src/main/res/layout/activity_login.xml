@@ -58,7 +58,7 @@
         android:elevation="4dp"/>
 
     <!-- Login Button -->
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
         android:text="Login"
         android:textStyle="bold"
@@ -66,8 +66,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
-        android:background="@color/white"
-        android:textColor="@color/header_color"/>
+        android:background="@drawable/white_button_background"
+        android:textColor="@color/gold"/>
 
     <!-- Register Link -->
     <TextView

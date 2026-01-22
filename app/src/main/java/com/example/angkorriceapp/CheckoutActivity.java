@@ -42,7 +42,7 @@ public class CheckoutActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         
         // Set status bar color
-        getWindow().setStatusBarColor(getResources().getColor(R.color.header_color, getTheme()));
+        getWindow().setStatusBarColor(getResources().getColor(R.color.gold, getTheme()));
         
         setContentView(R.layout.activity_checkout);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

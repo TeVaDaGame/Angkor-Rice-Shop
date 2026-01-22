@@ -19,13 +19,13 @@
         android:background="@color/background_color"
         android:elevation="4dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBackToHome"
             android:layout_width="80dp"
             android:layout_height="56dp"
             android:text="Back"
             android:textSize="14sp"
-            android:textColor="@color/header_color"
+            android:textColor="@color/gold"
             android:background="@drawable/quantity_button_background"
             
             android:paddingStart="8dp"
@@ -120,7 +120,7 @@
                         android:spacing="2dp"
                         android:layout_marginBottom="6dp">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus1"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -142,7 +142,7 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginEnd="3dp" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus1"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -173,7 +173,7 @@
                         android:textStyle="bold"
                         android:textColor="#C9A961" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnRemove1"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
@@ -241,7 +241,7 @@
                         android:spacing="2dp"
                         android:layout_marginBottom="6dp">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus2"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -263,7 +263,7 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginEnd="3dp" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus2"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -294,7 +294,7 @@
                         android:textStyle="bold"
                         android:textColor="#C9A961" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnRemove2"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
@@ -362,7 +362,7 @@
                         android:spacing="2dp"
                         android:layout_marginBottom="6dp">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus3"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -384,7 +384,7 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginEnd="3dp" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus3"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -415,7 +415,7 @@
                         android:textStyle="bold"
                         android:textColor="#C9A961" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnRemove3"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
@@ -483,7 +483,7 @@
                         android:spacing="2dp"
                         android:layout_marginBottom="6dp">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus4"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -505,7 +505,7 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginEnd="3dp" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus4"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -536,7 +536,7 @@
                         android:textStyle="bold"
                         android:textColor="#C9A961" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnRemove4"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
@@ -604,7 +604,7 @@
                         android:spacing="2dp"
                         android:layout_marginBottom="6dp">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus5"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -626,7 +626,7 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginEnd="3dp" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus5"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -657,7 +657,7 @@
                         android:textStyle="bold"
                         android:textColor="#C9A961" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnRemove5"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
@@ -725,7 +725,7 @@
                         android:spacing="2dp"
                         android:layout_marginBottom="6dp">
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnMinus6"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -747,7 +747,7 @@
                             android:layout_marginStart="3dp"
                             android:layout_marginEnd="3dp" />
 
-                        <Button
+                        <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/btnPlus6"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
@@ -778,7 +778,7 @@
                         android:textStyle="bold"
                         android:textColor="#C9A961" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btnRemove6"
                         android:layout_width="80dp"
                         android:layout_height="48dp"
@@ -866,13 +866,13 @@
         </LinearLayout>
 
         <!-- Checkout Button -->
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCheckout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="Check out"
             android:textSize="16sp"
-            android:textColor="@color/header_color"
+            android:textColor="@color/gold"
             android:textStyle="bold"
             android:background="@drawable/quantity_button_background"
              />

@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                         
                         android:layout_marginEnd="6dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn10kg1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -100,12 +100,12 @@
                         android:textSize="12sp"
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn25kg1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -114,12 +114,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn50kg1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -128,7 +128,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -161,7 +161,7 @@
                             android:layout_marginTop="3dp"
                             android:orientation="horizontal">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinus1"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -170,7 +170,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                             <TextView
@@ -185,7 +185,7 @@
                                 android:layout_marginStart="3dp"
                                 android:layout_marginEnd="3dp" />
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnPlus1"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -194,7 +194,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -206,7 +206,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCart1"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -214,7 +214,7 @@
                         android:textSize="13sp"
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -230,7 +230,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -304,7 +304,7 @@
                         
                         android:layout_marginEnd="6dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn10kg2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -313,12 +313,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn25kg2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -327,12 +327,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn50kg2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -341,7 +341,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -374,7 +374,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="3dp">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinus2"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -383,7 +383,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                             <TextView
@@ -398,7 +398,7 @@
                                 android:layout_marginStart="3dp"
                                 android:layout_marginEnd="3dp" />
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnPlus2"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -407,7 +407,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -419,7 +419,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCart2"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -428,7 +428,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -444,7 +444,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -518,7 +518,7 @@
                         
                         android:layout_marginEnd="6dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn10kg3"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -527,12 +527,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn25kg3"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -541,12 +541,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn50kg3"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -555,7 +555,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -588,7 +588,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="3dp">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinus3"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -597,7 +597,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                             <TextView
@@ -612,7 +612,7 @@
                                 android:layout_marginStart="3dp"
                                 android:layout_marginEnd="3dp" />
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnPlus3"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -621,7 +621,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -633,7 +633,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCart3"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -642,7 +642,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -658,7 +658,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -732,7 +732,7 @@
                         
                         android:layout_marginEnd="6dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn10kg4"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -741,12 +741,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn25kg4"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -755,12 +755,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn50kg4"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -769,7 +769,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -800,7 +800,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="3dp">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinus4"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -809,7 +809,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                             <TextView
@@ -824,7 +824,7 @@
                                 android:layout_marginStart="3dp"
                                 android:layout_marginEnd="3dp" />
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnPlus4"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -833,7 +833,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -845,7 +845,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCart4"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -854,7 +854,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -870,7 +870,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -944,7 +944,7 @@
                         
                         android:layout_marginEnd="6dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn10kg5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -953,12 +953,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn25kg5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -967,12 +967,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn50kg5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -981,7 +981,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -1012,7 +1012,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="3dp">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinus5"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -1021,7 +1021,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                             <TextView
@@ -1036,7 +1036,7 @@
                                 android:layout_marginStart="3dp"
                                 android:layout_marginEnd="3dp" />
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnPlus5"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -1045,7 +1045,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -1057,7 +1057,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCart5"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -1066,7 +1066,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:gravity="center"
                         android:padding="4dp" />
 
@@ -1082,7 +1082,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="2dp">
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1156,7 +1156,7 @@
                         
                         android:layout_marginEnd="6dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn10kg6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -1165,12 +1165,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn25kg6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -1179,12 +1179,12 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp"
                         android:layout_marginEnd="3dp" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/sizeBtn50kg6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -1193,7 +1193,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:paddingStart="6dp"
                         android:paddingEnd="6dp" />
 
@@ -1224,7 +1224,7 @@
                             android:orientation="horizontal"
                             android:layout_marginTop="3dp">
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnMinus6"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -1233,7 +1233,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                             <TextView
@@ -1248,7 +1248,7 @@
                                 android:layout_marginStart="3dp"
                                 android:layout_marginEnd="3dp" />
 
-                            <Button
+                            <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btnPlus6"
                                 android:layout_width="24dp"
                                 android:layout_height="32dp"
@@ -1257,7 +1257,7 @@
                                 android:textStyle="bold"
                                 android:background="@drawable/quantity_button_background"
                                 
-                                android:textColor="@color/header_color"
+                                android:textColor="@color/gold"
                                 android:padding="0dp" />
 
                         </LinearLayout>
@@ -1269,7 +1269,7 @@
                         android:layout_height="1dp"
                         android:layout_weight="1" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCart6"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -1278,7 +1278,7 @@
                         android:textStyle="bold"
                         android:background="@drawable/quantity_button_background"
                         
-                        android:textColor="@color/header_color"
+                        android:textColor="@color/gold"
                         android:gravity="center"
                         android:padding="4dp" />
 

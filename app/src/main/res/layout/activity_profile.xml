@@ -9,12 +9,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/header_color"
+        android:background="@color/gold"
         android:gravity="center_vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -50,6 +50,7 @@
                     android:layout_height="100dp"
                     android:background="@drawable/rounded_input_field"
                     android:contentDescription="Profile Image"
+                    android:src="@drawable/ic_person"
                     android:scaleType="centerInside" />
 
             </FrameLayout>
@@ -103,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:text="→"
                     android:textSize="20sp"
-                    android:textColor="@color/header_color" />
+                    android:textColor="@color/gold" />
 
             </LinearLayout>
 
@@ -115,7 +116,7 @@
                 android:gravity="center"
                 android:spacing="16dp">
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_edit_profile"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
@@ -123,12 +124,12 @@
                     android:text="Edit Profile"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:textColor="@color/header_color"
+                    android:textColor="@color/gold"
                     android:background="@drawable/rounded_input_field"
                     android:backgroundTint="@color/white"
                     android:layout_marginEnd="8dp" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_logout"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
@@ -136,7 +137,7 @@
                     android:text="Logout"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:textColor="@color/header_color"
+                    android:textColor="@color/gold"
                     android:background="@drawable/rounded_input_field"
                     android:backgroundTint="@color/white"
                     android:layout_marginStart="8dp" />

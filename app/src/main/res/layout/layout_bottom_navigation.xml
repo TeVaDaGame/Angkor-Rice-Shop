@@ -8,37 +8,37 @@
     android:padding="8dp"
     android:spacing="12dp">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnHome"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Home"
-        
-        android:textColor="@color/header_color"
+        android:background="@drawable/white_button_background"
+        android:textColor="@color/gold"
         android:textStyle="bold"
         android:layout_marginEnd="6dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCart"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Cart"
-        
-        android:textColor="@color/header_color"
+        android:background="@drawable/white_button_background"
+        android:textColor="@color/gold"
         android:textStyle="bold"
         android:layout_marginStart="6dp"
         android:layout_marginEnd="6dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnProfile"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="Profile"
-        
-        android:textColor="@color/header_color"
+        android:background="@drawable/white_button_background"
+        android:textColor="@color/gold"
         android:textStyle="bold"
         android:layout_marginStart="6dp" />
 

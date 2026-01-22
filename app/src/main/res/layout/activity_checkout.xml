@@ -21,7 +21,7 @@
         android:background="#C9A961"
         android:elevation="4dp">
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBackToCart"
             android:layout_width="80dp"
             android:layout_height="56dp"
@@ -29,7 +29,7 @@
             android:textSize="14sp"
             android:background="@drawable/quantity_button_background"
             
-            android:textColor="@color/header_color"
+            android:textColor="@color/gold"
             android:gravity="center" />
 
         <TextView
@@ -211,14 +211,14 @@
                     android:inputType="text|textMultiLine"
                     android:lineSpacingExtra="4dp" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btnPickFromMap"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:text="📍 Pick from Map"
                     android:textSize="13sp"
                     
-                    android:textColor="@color/header_color"
+                    android:textColor="@color/gold"
                     android:layout_marginTop="8dp"
                     android:gravity="center" />
 
@@ -348,7 +348,7 @@
         </LinearLayout>
 
         <!-- Place Order Button -->
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnPlaceOrder"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -356,7 +356,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             
-            android:textColor="@color/header_color" />
+            android:textColor="@color/gold" />
 
     </LinearLayout>
 

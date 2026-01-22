@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
         
         
-        int goldColor = ContextCompat.getColor(this, R.color.header_color);
+        int goldColor = ContextCompat.getColor(this, R.color.gold);
 
         
         window.setStatusBarColor(goldColor);
