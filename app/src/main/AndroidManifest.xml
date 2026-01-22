@@ -48,6 +48,21 @@
         <activity
             android:name=".MapPickerActivity"
             android:exported="false" />
+        <activity
+            android:name=".AdminLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProductListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminAddProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminOrdersActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
