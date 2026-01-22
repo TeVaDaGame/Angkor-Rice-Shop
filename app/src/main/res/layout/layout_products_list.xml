@@ -88,8 +88,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amounts:"
-                        android:textSize="11sp"
-                        
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
                         android:layout_marginEnd="6dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -152,7 +153,7 @@
                             android:layout_height="wrap_content"
                             android:text="$ 25.00"
                             android:textColor="#C9A961"
-                            android:textSize="15sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -300,8 +301,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amounts:"
-                        android:textSize="11sp"
-                        
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
                         android:layout_marginEnd="6dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -365,7 +367,7 @@
                             android:layout_height="wrap_content"
                             android:text="$ 22.00"
                             android:textColor="#C9A961"
-                            android:textSize="15sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -514,8 +516,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amounts:"
-                        android:textSize="11sp"
-                        
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
                         android:layout_marginEnd="6dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -579,7 +582,7 @@
                             android:layout_height="wrap_content"
                             android:text="$ 28.00"
                             android:textColor="#C9A961"
-                            android:textSize="15sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -728,8 +731,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amounts:"
-                        android:textSize="11sp"
-                        
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
                         android:layout_marginEnd="6dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -791,7 +795,9 @@
                             android:id="@+id/price4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$ 20.00" android:textColor="#C9A961" android:textSize="15sp"
+                            android:text="$ 20.00"
+                            android:textColor="#C9A961"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -940,8 +946,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amounts:"
-                        android:textSize="11sp"
-                        
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
                         android:layout_marginEnd="6dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -1003,7 +1010,9 @@
                             android:id="@+id/price5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$ 24.00" android:textColor="#C9A961" android:textSize="15sp"
+                            android:text="$ 24.00"
+                            android:textColor="#C9A961"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout
@@ -1152,8 +1161,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Amounts:"
-                        android:textSize="11sp"
-                        
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
                         android:layout_marginEnd="6dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -1215,7 +1225,9 @@
                             android:id="@+id/price6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$ 26.00" android:textColor="#C9A961" android:textSize="15sp"
+                            android:text="$ 26.00"
+                            android:textColor="#C9A961"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <LinearLayout

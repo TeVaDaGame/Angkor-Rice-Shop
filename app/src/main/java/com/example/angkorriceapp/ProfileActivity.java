@@ -51,9 +51,10 @@ public class ProfileActivity extends AppCompatActivity {
         );
 
         // Order history listener
-        orderHistorySection.setOnClickListener(v ->
-            Toast.makeText(ProfileActivity.this, "Order History - Coming Soon", Toast.LENGTH_SHORT).show()
-        );
+        orderHistorySection.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, OrderHistoryActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void loadUserData() {
