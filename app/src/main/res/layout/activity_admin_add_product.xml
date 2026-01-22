@@ -1,59 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:orientation="vertical"
+    android:background="@color/background_color">
 
+    <!-- Gold Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingTop="24dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="24dp"
+        android:background="#C9A961">
 
         <TextView
-            android:text="Add Product"
-            android:textSize="26sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="24dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/input_name"
-            android:hint="Product Name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/input_price"
-            android:hint="Price"
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"/>
+            android:text="Add Product"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
 
-        <EditText
-            android:id="@+id/input_weight"
-            android:hint="Weight (e.g. 5kg)"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <EditText
-            android:id="@+id/input_description"
-            android:hint="Description"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minLines="3"/>
-
-        <EditText
-            android:id="@+id/input_image"
-            android:hint="Image URL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/btn_save_product"
-            android:text="Save Product"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="4dp"
+            android:text="Create a new product"
+            android:textColor="#333333"
+            android:textSize="12sp" />
     </LinearLayout>
-</ScrollView>
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <EditText
+                android:id="@+id/input_name"
+                android:hint="Product Name"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input_field"
+                android:textColor="@android:color/black"
+                android:textColorHint="#AAAAAA"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp"/>
+
+            <EditText
+                android:id="@+id/input_price"
+                android:hint="Price"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input_field"
+                android:textColor="@android:color/black"
+                android:textColorHint="#AAAAAA"
+                android:inputType="numberDecimal"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp"/>
+
+            <EditText
+                android:id="@+id/input_weight"
+                android:hint="Weight (e.g. 5kg)"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input_field"
+                android:textColor="@android:color/black"
+                android:textColorHint="#AAAAAA"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp"/>
+
+            <EditText
+                android:id="@+id/input_description"
+                android:hint="Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input_field"
+                android:textColor="@android:color/black"
+                android:textColorHint="#AAAAAA"
+                android:minLines="3"
+                android:layout_marginBottom="12dp"
+                android:elevation="4dp"/>
+
+            <EditText
+                android:id="@+id/input_image"
+                android:hint="Image URL"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_input_field"
+                android:textColor="@android:color/black"
+                android:textColorHint="#AAAAAA"
+                android:layout_marginBottom="32dp"
+                android:elevation="4dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save_product"
+                android:text="Save Product"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/gold"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/white_button_background"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -2,7 +2,6 @@ package com.example.angkorriceapp;
 
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,25 +9,52 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.angkorriceapp.Model.Product;
-
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class AdminProductAdapter extends BaseAdapter {
 
     Context context;
     List<Product> productList = new ArrayList<>();
+    private FirebaseFirestore firestore;
 
     public AdminProductAdapter(Context context) {
         this.context = context;
+        this.firestore = FirebaseFirestore.getInstance();
         loadProducts();
     }
 
     private void loadProducts() {
-        SharedPreferences prefs = context.getSharedPreferences("products", Context.MODE_PRIVATE);
-        Map<String, ?> all = prefs.getAll();
+        // Fetch all products from Firestore
+        firestore.collection("products")
+                .get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    productList.clear();
+                    for (QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                        String id = document.getId();
+                        String name = document.getString("name");
+                        String price = document.getString("price");
+                        String weight = document.getString("weight");
+                        String image = document.getString("image");
+
+                        if (name != null && price != null && weight != null) {
+                            productList.add(new Product(id, name, price, weight, image != null ? image : ""));
+                        }
+                    }
+                    notifyDataSetChanged();
+                })
+                .addOnFailureListener(e -> {
+                    // If Firestore fails, fallback to SharedPreferences
+                    loadProductsFromSharedPreferences();
+                });
+    }
+
+    private void loadProductsFromSharedPreferences() {
+        android.content.SharedPreferences prefs = context.getSharedPreferences("products", Context.MODE_PRIVATE);
+        java.util.Map<String, ?> all = prefs.getAll();
 
         for (String key : all.keySet()) {
             String data = prefs.getString(key, "");
@@ -44,6 +70,7 @@ public class AdminProductAdapter extends BaseAdapter {
                 ));
             }
         }
+        notifyDataSetChanged();
     }
 
     @Override

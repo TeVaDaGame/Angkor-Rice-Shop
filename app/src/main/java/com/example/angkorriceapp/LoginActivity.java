@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity {
 
     EditText emailInput, passInput;
-    Button btnLogin;
+    Button btnLogin, btnAdminLogin;
     TextView txtRegister;
     private FirebaseAuth mAuth;
 
@@ -27,9 +27,14 @@ public class LoginActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.input_email);
         passInput = findViewById(R.id.input_password);
         btnLogin = findViewById(R.id.btn_login);
+        btnAdminLogin = findViewById(R.id.btn_admin_login_link);
         txtRegister = findViewById(R.id.txt_register);
 
         btnLogin.setOnClickListener(v -> loginUser());
+
+        btnAdminLogin.setOnClickListener(v -> {
+            startActivity(new Intent(this, AdminLoginActivity.class));
+        });
 
         txtRegister.setOnClickListener(v -> {
             startActivity(new Intent(this, RegisterActivity.class));
