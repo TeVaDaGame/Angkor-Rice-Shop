@@ -14,21 +14,25 @@
     <!-- Header with back button -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/gold"
-        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:paddingEnd="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="center_vertical"
+        android:background="@color/gold"
+        android:elevation="4dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="←"
-            android:textSize="28sp"
-            android:textColor="@color/white"
-            android:background="@android:color/transparent"
-            android:contentDescription="Back" />
+            android:layout_width="80dp"
+            android:layout_height="56dp"
+            android:text="Back"
+            android:textSize="14sp"
+            android:background="@drawable/quantity_button_background"
+            android:textColor="@color/gold"
+            android:gravity="center" />
 
         <TextView
             android:layout_width="0dp"

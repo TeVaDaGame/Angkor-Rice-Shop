@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background_color">
+    android:background="@color/background_color"
+    android:paddingTop="40dp">
 
     <!-- Gold Header -->
     <LinearLayout
@@ -91,18 +92,6 @@
                 android:textColor="@android:color/black"
                 android:textColorHint="#AAAAAA"
                 android:minLines="3"
-                android:layout_marginBottom="12dp"
-                android:elevation="4dp"/>
-
-            <EditText
-                android:id="@+id/input_image"
-                android:hint="Image URL"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:padding="12dp"
-                android:background="@drawable/rounded_input_field"
-                android:textColor="@android:color/black"
-                android:textColorHint="#AAAAAA"
                 android:layout_marginBottom="32dp"
                 android:elevation="4dp"/>
 

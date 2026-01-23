@@ -18,8 +18,11 @@ public class ProfileActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private FirebaseUser currentUser;
     private EditText inputName, inputEmail;
-    private Button btnLogout, btnEditProfile, btnBack;
-    private LinearLayout orderHistorySection;
+    private androidx.cardview.widget.CardView btnLogout, btnEditProfile;
+    private Button btnBack, btnSaveProfile, btnCancelEdit;
+    private androidx.cardview.widget.CardView orderHistorySection;
+    private LinearLayout editButtonContainer, saveButtonContainer;
+    private boolean isEditMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,10 @@ public class ProfileActivity extends AppCompatActivity {
         btnEditProfile = findViewById(R.id.btn_edit_profile);
         btnBack = findViewById(R.id.btn_back);
         orderHistorySection = findViewById(R.id.order_history_section);
+        btnSaveProfile = findViewById(R.id.btn_save_profile);
+        btnCancelEdit = findViewById(R.id.btn_cancel_edit);
+        editButtonContainer = findViewById(R.id.edit_button_container);
+        saveButtonContainer = findViewById(R.id.save_button_container);
 
         // Load user data
         loadUserData();
@@ -46,9 +53,11 @@ public class ProfileActivity extends AppCompatActivity {
         
         btnLogout.setOnClickListener(v -> logout());
         
-        btnEditProfile.setOnClickListener(v -> 
-            Toast.makeText(ProfileActivity.this, "Edit Profile - Coming Soon", Toast.LENGTH_SHORT).show()
-        );
+        btnEditProfile.setOnClickListener(v -> enterEditMode());
+        
+        btnSaveProfile.setOnClickListener(v -> saveProfileChanges());
+        
+        btnCancelEdit.setOnClickListener(v -> exitEditMode());
 
         // Order history listener
         orderHistorySection.setOnClickListener(v -> {
@@ -99,6 +108,57 @@ public class ProfileActivity extends AppCompatActivity {
         } else {
             Log.e("ProfileActivity", "No current user found");
             Toast.makeText(this, "Error: No user logged in", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void enterEditMode() {
+        isEditMode = true;
+        inputName.setEnabled(true);
+        inputName.requestFocus();
+        editButtonContainer.setVisibility(LinearLayout.GONE);
+        saveButtonContainer.setVisibility(LinearLayout.VISIBLE);
+        orderHistorySection.setVisibility(LinearLayout.GONE);
+        Toast.makeText(this, "Edit mode enabled", Toast.LENGTH_SHORT).show();
+    }
+
+    private void exitEditMode() {
+        isEditMode = false;
+        inputName.setEnabled(false);
+        editButtonContainer.setVisibility(LinearLayout.VISIBLE);
+        saveButtonContainer.setVisibility(LinearLayout.GONE);
+        orderHistorySection.setVisibility(LinearLayout.VISIBLE);
+        // Reload original data
+        loadUserData();
+        Toast.makeText(this, "Changes cancelled", Toast.LENGTH_SHORT).show();
+    }
+
+    private void saveProfileChanges() {
+        String newName = inputName.getText().toString().trim();
+        
+        if (newName.isEmpty()) {
+            Toast.makeText(this, "Name cannot be empty", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        
+        if (currentUser != null) {
+            String userId = currentUser.getUid();
+            
+            // Update Firestore
+            db.collection("users").document(userId)
+                .update("name", newName)
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("ProfileActivity", "Name updated successfully");
+                    isEditMode = false;
+                    inputName.setEnabled(false);
+                    editButtonContainer.setVisibility(LinearLayout.VISIBLE);
+                    saveButtonContainer.setVisibility(LinearLayout.GONE);
+                    orderHistorySection.setVisibility(LinearLayout.VISIBLE);
+                    Toast.makeText(ProfileActivity.this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("ProfileActivity", "Error updating name: " + e.getMessage(), e);
+                    Toast.makeText(ProfileActivity.this, "Error updating profile: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
         }
     }
 

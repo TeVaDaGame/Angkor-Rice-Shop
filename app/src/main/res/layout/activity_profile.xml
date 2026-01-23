@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,29 +9,20 @@
     <!-- Status bar spacer -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="24dp"
+        android:layout_height="40dp"
         android:background="@color/gold" />
 
-    <!-- Header with back button -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/gold"
-        android:gravity="center_vertical"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_back"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:text="←"
-            android:textSize="28sp"
-            android:textColor="@color/white"
-            android:background="@android:color/transparent"
-            android:contentDescription="Back" />
-
-    </LinearLayout>
+    <!-- Back button -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_back"
+        android:layout_width="80dp"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:text="Back"
+        android:textSize="14sp"
+        android:background="@drawable/quantity_button_background"
+        android:textColor="@color/gold"
+        android:gravity="center" />
 
     <!-- Scrollable content -->
     <ScrollView
@@ -88,65 +80,158 @@
                 android:layout_marginBottom="32dp" />
 
             <!-- Order History Section -->
-            <LinearLayout
+            <androidx.cardview.widget.CardView
                 android:id="@+id/order_history_section"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
                 android:layout_marginBottom="32dp"
-                android:paddingEnd="12dp">
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="order history"
-                    android:textSize="16sp"
-                    android:textColor="@color/white" />
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:background="#F5E6D3">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="→"
-                    android:textSize="20sp"
-                    android:textColor="@color/gold" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Order History"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/black" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="→"
+                        android:textSize="28sp"
+                        android:textColor="@color/gold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <!-- Button Container -->
             <LinearLayout
+                android:id="@+id/edit_button_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:spacing="12dp">
+
+                <!-- Edit Profile Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="#F5E6D3">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Edit Profile"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Logout Card -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:background="#F5E6D3">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Logout"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/black"
+                            android:gravity="center" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Save Button Container (initially hidden) -->
+            <LinearLayout
+                android:id="@+id/save_button_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:spacing="16dp">
+                android:spacing="12dp"
+                android:visibility="gone">
 
+                <!-- Save Profile Button -->
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_edit_profile"
+                    android:id="@+id/btn_save_profile"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="56dp"
                     android:layout_weight="1"
-                    android:text="Edit Profile"
-                    android:textStyle="bold"
+                    android:layout_marginEnd="6dp"
+                    android:text="Save"
                     android:textSize="14sp"
-                    android:textColor="@color/gold"
-                    android:background="@drawable/rounded_input_field"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginEnd="8dp" />
+                    android:textColor="#C9A961"
+                    android:background="@drawable/quantity_button_background"
+                    android:textStyle="bold"
+                    android:gravity="center" />
 
+                <!-- Cancel Edit Button -->
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_logout"
+                    android:id="@+id/btn_cancel_edit"
                     android:layout_width="0dp"
-                    android:layout_height="50dp"
+                    android:layout_height="56dp"
                     android:layout_weight="1"
-                    android:text="Logout"
-                    android:textStyle="bold"
+                    android:layout_marginStart="6dp"
+                    android:text="Cancel"
                     android:textSize="14sp"
-                    android:textColor="@color/gold"
-                    android:background="@drawable/rounded_input_field"
-                    android:backgroundTint="@color/white"
-                    android:layout_marginStart="8dp" />
+                    android:textColor="#C9A961"
+                    android:background="@drawable/quantity_button_background"
+                    android:textStyle="bold"
+                    android:gravity="center" />
 
             </LinearLayout>
 

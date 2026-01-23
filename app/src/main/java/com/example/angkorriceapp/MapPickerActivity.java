@@ -114,16 +114,35 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
         if (locationManager != null) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                     == PackageManager.PERMISSION_GRANTED) {
+                // Request GPS updates for accuracy
                 locationManager.requestLocationUpdates(
                         LocationManager.GPS_PROVIDER,
                         1000, // Update every 1 second
                         0,    // Update every 0 meters
                         this);
                 
-                // Also try to get the last known location immediately
-                Location lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-                if (lastKnownLocation != null) {
-                    onLocationChanged(lastKnownLocation);
+                // Also request NETWORK_PROVIDER for faster initial fix
+                if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+                    locationManager.requestLocationUpdates(
+                            LocationManager.NETWORK_PROVIDER,
+                            1000,
+                            0,
+                            this);
+                }
+                
+                // Try to get the last known location immediately from both providers
+                Location lastGpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                Location lastNetworkLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                
+                // Use the most recent location
+                Location bestLocation = lastGpsLocation;
+                if (lastNetworkLocation != null && (bestLocation == null || 
+                        lastNetworkLocation.getTime() > bestLocation.getTime())) {
+                    bestLocation = lastNetworkLocation;
+                }
+                
+                if (bestLocation != null) {
+                    onLocationChanged(bestLocation);
                 }
             }
         }
@@ -133,8 +152,12 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
     public void onLocationChanged(Location location) {
         if (location != null) {
             userLocation = new LatLng(location.getLatitude(), location.getLongitude());
-            selectedLocation = userLocation;
+            // Only update selectedLocation if it's still at default Cambodia center
+            if (selectedLocation == null || selectedLocation.equals(CAMBODIA_CENTER)) {
+                selectedLocation = userLocation;
+            }
             if (mMap != null) {
+                // Update the map to show user's location
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(selectedLocation, ZOOM_LEVEL));
                 mMap.clear();
                 addMarker(selectedLocation);
@@ -193,16 +216,20 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         try {
             mMap = googleMap;
-            selectedLocation = CAMBODIA_CENTER;
 
             // Set map type to normal
             mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             
-            // Move camera to Cambodia initially
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(CAMBODIA_CENTER, ZOOM_LEVEL));
-            
-            // Add initial marker
-            addMarker(CAMBODIA_CENTER);
+            // If we have user location, center on it; otherwise use default
+            if (userLocation != null) {
+                selectedLocation = userLocation;
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_LEVEL));
+                addMarker(userLocation);
+            } else {
+                // Will be centered on user location once GPS is available
+                selectedLocation = CAMBODIA_CENTER;
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(CAMBODIA_CENTER, ZOOM_LEVEL));
+            }
 
             // Handle map clicks to select location
             mMap.setOnMapClickListener(latLng -> {
@@ -331,8 +358,35 @@ public class MapPickerActivity extends AppCompatActivity implements OnMapReadyCa
             mMap.clear();
             addMarker(userLocation);
             Toast.makeText(this, "Centered on your location", Toast.LENGTH_SHORT).show();
+        } else if (mMap != null) {
+            // Try to get the most recent location available
+            if (locationManager != null && ActivityCompat.checkSelfPermission(this, 
+                    Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                
+                Location gpsLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                Location networkLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                
+                Location bestLocation = gpsLocation;
+                if (networkLocation != null && (bestLocation == null || 
+                        networkLocation.getTime() > bestLocation.getTime())) {
+                    bestLocation = networkLocation;
+                }
+                
+                if (bestLocation != null) {
+                    userLocation = new LatLng(bestLocation.getLatitude(), bestLocation.getLongitude());
+                    selectedLocation = userLocation;
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation, ZOOM_LEVEL));
+                    mMap.clear();
+                    addMarker(userLocation);
+                    Toast.makeText(this, "Centered on your location", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Waiting for location... Please try again in a moment", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Waiting for location...", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, "Waiting for location...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Map is not ready", Toast.LENGTH_SHORT).show();
         }
     }
 

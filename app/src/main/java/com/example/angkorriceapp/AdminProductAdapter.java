@@ -39,9 +39,11 @@ public class AdminProductAdapter extends BaseAdapter {
                         String price = document.getString("price");
                         String weight = document.getString("weight");
                         String image = document.getString("image");
+                        String origin = document.getString("origin");
 
                         if (name != null && price != null && weight != null) {
-                            productList.add(new Product(id, name, price, weight, image != null ? image : ""));
+                            Product product = new Product(name, price, weight, origin != null ? origin : "", image != null ? image : "");
+                            productList.add(product);
                         }
                     }
                     notifyDataSetChanged();
@@ -96,14 +98,76 @@ public class AdminProductAdapter extends BaseAdapter {
         }
 
         Product p = productList.get(i);
+        final int position = i;
 
         TextView name = view.findViewById(R.id.txt_name);
         TextView price = view.findViewById(R.id.txt_price);
-        TextView weight = view.findViewById(R.id.txt_weight);
+        TextView origin = view.findViewById(R.id.txt_origin);
+        android.widget.Button btnEdit = view.findViewById(R.id.btn_edit);
+        android.widget.Button btnDelete = view.findViewById(R.id.btn_delete);
 
-        name.setText("Name: " + p.getName());
-        price.setText("Price: $" + p.getPrice());
-        weight.setText("Weight: " + p.getWeight());
+        name.setText(p.getName());
+        price.setText("$" + p.getPrice());
+        origin.setText("From: " + p.getDescription());
+
+        // Edit button functionality
+        btnEdit.setOnClickListener(v -> {
+            // Open AdminEditProductActivity with product data
+            android.content.Intent intent = new android.content.Intent(context, AdminEditProductActivity.class);
+            intent.putExtra("productName", p.getName());
+            intent.putExtra("productPrice", p.getPrice());
+            intent.putExtra("productOrigin", p.getDescription());
+            context.startActivity(intent);
+        });
+
+        // Delete button functionality
+        btnDelete.setOnClickListener(v -> {
+            // Show confirmation dialog before deleting with themed design
+            android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(context);
+            builder.setTitle("Delete Product")
+                    .setMessage("Are you sure you want to delete " + p.getName() + "?")
+                    .setPositiveButton("Delete", (dialog, which) -> {
+                        // Delete from Firestore
+                        firestore.collection("products")
+                                .whereEqualTo("name", p.getName())
+                                .get()
+                                .addOnSuccessListener(queryDocumentSnapshots -> {
+                                    for (com.google.firebase.firestore.QueryDocumentSnapshot document : queryDocumentSnapshots) {
+                                        firestore.collection("products")
+                                                .document(document.getId())
+                                                .delete()
+                                                .addOnSuccessListener(aVoid -> {
+                                                    productList.remove(position);
+                                                    notifyDataSetChanged();
+                                                    android.widget.Toast.makeText(context, "Product deleted successfully", android.widget.Toast.LENGTH_SHORT).show();
+                                                })
+                                                .addOnFailureListener(e -> {
+                                                    android.widget.Toast.makeText(context, "Error deleting product", android.widget.Toast.LENGTH_SHORT).show();
+                                                });
+                                    }
+                                });
+                    })
+                    .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+
+            android.app.AlertDialog dialog = builder.create();
+            
+            // Style the dialog to match the store theme
+            dialog.setOnShowListener(dialogInterface -> {
+                // Style positive button (Delete) - Red for delete action
+                dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE)
+                        .setTextColor(context.getResources().getColor(android.R.color.holo_red_dark));
+                dialog.getButton(android.app.AlertDialog.BUTTON_POSITIVE)
+                        .setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 14);
+                
+                // Style negative button (Cancel) - Gold for cancel action
+                dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)
+                        .setTextColor(context.getResources().getColor(android.R.color.holo_green_dark));
+                dialog.getButton(android.app.AlertDialog.BUTTON_NEGATIVE)
+                        .setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 14);
+            });
+            
+            dialog.show();
+        });
 
         return view;
     }

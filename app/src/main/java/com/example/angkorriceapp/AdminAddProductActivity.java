@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class AdminAddProductActivity extends AppCompatActivity {
 
-    EditText name, price, weight, description, image;
+    EditText name, price, weight, description;
     Button btnSave;
 
     @Override
@@ -22,7 +22,6 @@ public class AdminAddProductActivity extends AppCompatActivity {
         price = findViewById(R.id.input_price);
         weight = findViewById(R.id.input_weight);
         description = findViewById(R.id.input_description);
-        image = findViewById(R.id.input_image);
         btnSave = findViewById(R.id.btn_save_product);
 
         btnSave.setOnClickListener(v -> saveProduct());
@@ -33,7 +32,6 @@ public class AdminAddProductActivity extends AppCompatActivity {
         String p = price.getText().toString();
         String w = weight.getText().toString();
         String d = description.getText().toString();
-        String i = image.getText().toString();
 
         if (n.isEmpty() || p.isEmpty() || w.isEmpty()) {
             Toast.makeText(this, "Please fill required fields", Toast.LENGTH_SHORT).show();
@@ -43,7 +41,7 @@ public class AdminAddProductActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("products", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
 
-        String productData = p + ";" + w + ";" + d + ";" + i;
+        String productData = p + ";" + w + ";" + d + ";";
         editor.putString(n, productData);
         editor.apply();
 

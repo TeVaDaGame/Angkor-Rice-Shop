@@ -61,7 +61,6 @@ public class OrderHistoryActivity extends AppCompatActivity {
 
             db.collection("orders")
                     .whereEqualTo("userId", userId)
-                    .orderBy("timestamp", com.google.firebase.firestore.Query.Direction.DESCENDING)
                     .get()
                     .addOnSuccessListener(queryDocumentSnapshots -> {
                         ordersList.clear();

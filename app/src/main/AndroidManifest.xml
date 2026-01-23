@@ -65,6 +65,9 @@
         <activity
             android:name=".AdminOrdersActivity"
             android:exported="false" />
+        <activity
+            android:name=".AdminEditProductActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
