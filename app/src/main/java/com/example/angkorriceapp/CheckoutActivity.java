@@ -20,7 +20,6 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.widget.NestedScrollView;
 
 import com.example.angkorriceapp.Model.Order;
-import com.example.angkorriceapp.Model.OrderItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -151,13 +150,13 @@ public class CheckoutActivity extends AppCompatActivity {
         }
 
         // Create order items list from cart
-        List<OrderItem> orderItems = new ArrayList<>();
+        List<Order.OrderItem> orderItems = new ArrayList<>();
         for (CartItem cartItem : CartManager.getInstance().getCartItems()) {
-            OrderItem item = new OrderItem(
+            Order.OrderItem item = new Order.OrderItem(
+                String.valueOf(cartItem.getId()),
                 cartItem.getName(),
-                cartItem.getPrice(),
                 cartItem.getQuantity(),
-                cartItem.getSize()
+                cartItem.getPrice()
             );
             orderItems.add(item);
         }
