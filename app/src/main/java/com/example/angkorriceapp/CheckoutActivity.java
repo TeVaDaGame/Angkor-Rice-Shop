@@ -3,6 +3,7 @@ package com.example.angkorriceapp;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -17,6 +18,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.core.widget.NestedScrollView;
+
+import com.example.angkorriceapp.Model.Order;
+import com.example.angkorriceapp.Model.OrderItem;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -35,11 +45,19 @@ public class CheckoutActivity extends AppCompatActivity {
     private LinearLayout llProductsList;
 
     private ActivityResultLauncher<Intent> mapPickerLauncher;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        
+        // Initialize Firebase
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        currentUser = mAuth.getCurrentUser();
         
         // Set status bar color
         getWindow().setStatusBarColor(getResources().getColor(R.color.gold, getTheme()));
@@ -121,19 +139,63 @@ public class CheckoutActivity extends AppCompatActivity {
             if (CartManager.getInstance().getCartItems().isEmpty()) {
                 Toast.makeText(this, "Cart is empty", Toast.LENGTH_SHORT).show();
             } else {
-                String orderMessage = String.format("Order placed successfully!\nName: %s\nPhone: %s\nDelivery to: %s\nTotal: $%.2f", 
-                    name, phone, address, total);
-                Toast.makeText(this, orderMessage, Toast.LENGTH_LONG).show();
+                placeOrder(name, phone, address, total);
+            }
+        });
+    }
+
+    private void placeOrder(String name, String phone, String address, double total) {
+        if (currentUser == null) {
+            Toast.makeText(this, "Error: User not logged in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Create order items list from cart
+        List<OrderItem> orderItems = new ArrayList<>();
+        for (CartItem cartItem : CartManager.getInstance().getCartItems()) {
+            OrderItem item = new OrderItem(
+                cartItem.getName(),
+                cartItem.getPrice(),
+                cartItem.getQuantity(),
+                cartItem.getSize()
+            );
+            orderItems.add(item);
+        }
+
+        // Create order object
+        String orderId = db.collection("orders").document().getId();
+        Order order = new Order(
+            orderId,
+            currentUser.getUid(),
+            "Pending",
+            System.currentTimeMillis(),
+            total,
+            orderItems,
+            address
+        );
+
+        // Save to Firestore
+        db.collection("orders").document(orderId)
+            .set(order)
+            .addOnSuccessListener(aVoid -> {
+                Log.d("CheckoutActivity", "Order placed successfully: " + orderId);
+                Toast.makeText(CheckoutActivity.this, "Order placed successfully!", Toast.LENGTH_SHORT).show();
+                
                 // Clear cart after successful order
                 CartManager.getInstance().getCartItems().clear();
+                
                 // Clear all input fields
                 etCustomerName.setText("");
                 etCustomerPhone.setText("");
                 etDeliveryAddress.setText("");
+                
                 // Navigate back to cart
                 finish();
-            }
-        });
+            })
+            .addOnFailureListener(e -> {
+                Log.e("CheckoutActivity", "Error placing order: " + e.getMessage(), e);
+                Toast.makeText(CheckoutActivity.this, "Error placing order: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            });
     }
 
     private void updateOrderSummary() {
